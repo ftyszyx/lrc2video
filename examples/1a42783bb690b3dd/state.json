@@ -1,0 +1,12 @@
+{
+  "params": {
+    "style": "anime",
+    "video_model": "tooncrafter",
+    "subtitle_effect": "karaoke"
+  },
+  "prompts_path": "E:\\opensource\\mywork\\lrc2video\\cache\\jobs\\1a42783bb690b3dd\\prompts.json",
+  "images_dir": null,
+  "videos_dir": null,
+  "subtitle_path": null,
+  "final_video": null
+}

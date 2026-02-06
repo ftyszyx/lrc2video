@@ -1,0 +1,8 @@
+{
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.defaultColorDecorators": "never"
+    },
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe"
+}

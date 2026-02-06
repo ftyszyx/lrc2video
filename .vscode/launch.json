@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "run app.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app.py",
+            "console": "integratedTerminal",
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "envFile": "${workspaceFolder}/.env",
+        }
+    ]
+}

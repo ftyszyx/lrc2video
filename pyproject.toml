@@ -1,0 +1,75 @@
+[project]
+name = "lrc2video"
+version = "0.1.0"
+description = "将 LRC 歌词文件自动转换为带艺术字幕的动漫风格视频"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = { text = "MIT" }
+authors = [{ name = "Your Name", email = "your@email.com" }]
+keywords = ["lrc", "video", "lyrics", "ai", "anime", "subtitle"]
+
+dependencies = [
+    # Web 界面
+    "gradio>=4.0.0",
+
+    # AI 模型
+    "torch>=2.0.0",
+    "diffusers>=0.25.0",
+    "transformers>=4.36.0",
+    "accelerate>=0.25.0",
+    "safetensors>=0.4.0",
+
+    # LLM API
+    "openai>=1.0.0",
+
+    # 图像处理
+    "Pillow>=10.0.0",
+    "opencv-python>=4.8.0",
+
+    # 字幕处理
+    "pysubs2>=1.6.0",
+
+    # 视频处理
+    "moviepy>=1.0.3",
+
+    # 工具
+    "tqdm>=4.66.0",
+    "python-dotenv>=1.0.0",
+
+    # 类型与配置
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0.0", "ruff>=0.1.0", "black>=23.0.0"]
+
+[project.scripts]
+lrc2video = "app:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["core", "models", "utils"]
+
+[tool.hatch.build.targets.sdist]
+include = ["core/", "models/", "utils/", "app.py", "config.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.pylint.format]
+max-line-length = 200
+
+[tool.pylint.messages_control]
+disable = ["W0718", "C0115", "C0116"]
